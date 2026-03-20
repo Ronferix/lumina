@@ -1,0 +1,1949 @@
+/**
+ * Plenitud Center - Estilos principales
+ * Separación de capas: solo presentación
+ */
+
+/* ==========================================================================
+   Reset y variables
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --dark-gray: #1a1a1a;
+    --gold: #c9a961;
+    --light-gold: #e5d5a8;
+    --white: #fafafa;
+    --cream: #f5f5f0;
+    --gray: #888;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Loader
+   ========================================================================== */
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* ==========================================================================
+   Navegación (solo la barra superior)
+   ========================================================================== */
+
+header nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    mix-blend-mode: difference;
+}
+
+header nav.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1.5rem 4rem;
+    backdrop-filter: blur(20px);
+    mix-blend-mode: normal;
+}
+
+header .brand {
+    font-size: 1.8rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+header .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+header .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    transition: color 0.3s;
+    font-weight: 300;
+}
+
+header .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+header .nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-lang {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gray);
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Hero (estilo Benavento: subtítulo + título grande + ubicación)
+   ========================================================================== */
+
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=1920&auto=format&fit=crop&q=80') center/cover;
+    animation: slowZoom 20s infinite alternate;
+}
+
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--white);
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 300;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    animation: fadeInUp 1s ease 0.15s backwards;
+}
+
+.hero-location {
+    font-size: 0.8rem;
+    color: var(--gray);
+    letter-spacing: 3px;
+    font-weight: 300;
+    animation: fadeInUp 1s ease 0.3s backwards;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeInUp 1s ease 0.8s backwards;
+    cursor: pointer;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.1% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Secciones comunes
+   ========================================================================== */
+
+section {
+    padding: 8rem 4rem;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   Intro (estilo Benavento: headline + cita + pills)
+   ========================================================================== */
+
+.intro {
+    background: var(--black);
+    text-align: center;
+    padding: 8rem 4rem 10rem;
+}
+
+.intro-headline {
+    margin-bottom: 3rem;
+}
+
+.intro-headline-main {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.intro-headline-sub {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--gold);
+}
+
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: var(--gray);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.intro-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+}
+
+.pill {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    color: var(--light-gold);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.pill:hover {
+    background: rgba(201, 169, 97, 0.1);
+    border-color: var(--gold);
+}
+
+/* ==========================================================================
+   Servicios
+   ========================================================================== */
+
+.services {
+    background: var(--dark-gray);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(201, 169, 97, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.05), transparent);
+    transition: left 0.6s;
+}
+
+.service-item:hover::before {
+    left: 100%;
+}
+
+.service-item:hover {
+    border-color: rgba(201, 169, 97, 0.3);
+    transform: translateY(-10px);
+}
+
+.service-number {
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.service-item p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.service-card-link:hover h3 {
+    color: var(--light-gold);
+}
+
+.service-card-cta {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-top: 1rem;
+    position: relative;
+}
+
+.service-card-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.service-card-link:hover .service-card-cta::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Galería (con encabezado tipo Benavento)
+   ========================================================================== */
+
+.gallery {
+    background: var(--black);
+    padding: 6rem 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.gallery-section-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.gallery-section-header .section-subtitle {
+    margin-bottom: 1rem;
+}
+
+.gallery-section-header .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.gallery-item {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+    transition: background 0.4s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: rgba(0,0,0,0.2);
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover .gallery-title {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.gallery-subtitle {
+    color: var(--gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+}
+
+.gallery-item:hover .gallery-subtitle {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Bloques de información (3 columnas, estilo Benavento)
+   ========================================================================== */
+
+.info-blocks {
+    background: var(--dark-gray);
+    padding: 8rem 4rem;
+}
+
+.info-blocks-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.info-block {
+    text-decoration: none;
+    color: inherit;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(201, 169, 97, 0.12);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-block:hover {
+    border-color: rgba(201, 169, 97, 0.35);
+    transform: translateY(-4px);
+}
+
+.info-block-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.info-block-text {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.info-block-link {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    position: relative;
+}
+
+.info-block-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.info-block:hover .info-block-link::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Experiencia
+   ========================================================================== */
+
+.experience {
+    background: linear-gradient(to bottom, var(--dark-gray), var(--black));
+    text-align: center;
+}
+
+.experience-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-description {
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 3rem;
+}
+
+.experience-list {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.experience-item {
+    text-align: center;
+}
+
+.experience-deco {
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 1.5rem;
+}
+
+.experience-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.experience-item p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+
+.cta {
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1920&auto=format&fit=crop&q=80') center/cover fixed;
+}
+
+.cta-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.cta-title,
+.cta h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    transition: left 0.4s;
+    z-index: -1;
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+.cta-button:hover {
+    color: var(--black);
+}
+
+.cta-text {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta .cta-content .cta-button + .cta-button {
+    margin-left: 1rem;
+}
+
+.cta-button-secondary {
+    background: transparent;
+}
+
+.cta-button-secondary::before {
+    display: none;
+}
+
+.cta-button-secondary:hover {
+    color: var(--light-gold);
+    border-color: var(--light-gold);
+}
+
+@media (max-width: 768px) {
+    .cta .cta-content .cta-button + .cta-button {
+        margin-left: 0;
+        margin-top: 0.75rem;
+        display: inline-block;
+    }
+}
+
+/* ==========================================================================
+   Contacto
+   ========================================================================== */
+
+.contact {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    min-height: 80vh;
+}
+
+.contact-info {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-item {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.contact-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.contact-value:hover {
+    color: var(--gold);
+}
+
+.contact-map {
+    position: relative;
+    min-height: 600px;
+}
+
+.contact-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(40%) contrast(1.1) brightness(0.75);
+    transition: filter 0.4s ease;
+}
+
+.contact-map:hover iframe {
+    filter: grayscale(15%) contrast(1.05) brightness(0.9);
+}
+
+.contact-map-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-map-link:hover {
+    color: var(--light-gold);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+    background: var(--black);
+    padding: 4rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.footer-social {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-social a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--gold);
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    color: var(--gray);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.footer-copy {
+    color: var(--gray);
+}
+
+.footer-privacy {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-privacy:hover {
+    color: var(--gold);
+}
+
+/* ==========================================================================
+   Animaciones (reveal on scroll)
+   ========================================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Página interna - Servicios (estilo Áreas Generales Benavento)
+   ========================================================================== */
+
+.page-inner .loader {
+    display: none;
+}
+
+.page-hero {
+    padding: 12rem 4rem 6rem;
+    text-align: center;
+    background: var(--black);
+}
+
+.page-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+.page-hero-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--gold);
+}
+
+.service-detail-nav {
+    background: var(--dark-gray);
+    padding: 2rem 4rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.service-detail-nav-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.service-spheres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 2.5rem;
+}
+
+.service-sphere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.35s ease;
+}
+
+.service-sphere:hover {
+    color: var(--gold);
+}
+
+.service-sphere:hover .service-sphere-circle {
+    border-color: var(--gold);
+    background: rgba(201, 169, 97, 0.06);
+}
+
+.service-sphere-circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s ease;
+}
+
+.service-sphere-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-sphere-icon svg {
+    width: 100%;
+    height: 100%;
+    color: currentColor;
+}
+
+.service-sphere-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: inherit;
+    font-weight: 300;
+}
+
+.service-detail-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+}
+
+.service-detail-section {
+    scroll-margin-top: 8rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.service-detail-section:last-of-type {
+    border-bottom: none;
+}
+
+.service-detail-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.service-detail-text {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+.service-detail-quote {
+    color: var(--light-gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(201, 169, 97, 0.4);
+}
+
+.service-detail-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.service-detail-list li {
+    color: var(--gray);
+    font-size: 0.95rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+}
+
+.service-detail-list li::before {
+    content: '✱';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+}
+
+.page-cta {
+    text-align: center;
+    padding: 5rem 4rem;
+    background: var(--dark-gray);
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.page-cta-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Página Equipo (Conoce al equipo) - Seccionada y con animaciones
+   ========================================================================== */
+
+.page-equipo .loader {
+    display: none;
+}
+
+/* Hero equipo */
+.team-hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.team-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&auto=format&fit=crop&q=80') center/cover;
+}
+
+.team-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 700px;
+    padding: 0 2rem;
+}
+
+.team-hero-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.team-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.team-hero-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--gray);
+}
+
+.team-hero .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Intro equipo */
+.team-intro-section {
+    padding: 8rem 4rem 6rem;
+    background: var(--black);
+    text-align: center;
+}
+
+.team-intro-section .team-intro-text {
+    max-width: 640px;
+    margin: 0 auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--gray);
+    font-style: italic;
+}
+
+/* Sección por terapeuta */
+.team-member-section {
+    padding: 6rem 4rem;
+    background: var(--dark-gray);
+    scroll-margin-top: 6rem;
+}
+
+.team-member-section:nth-child(even) {
+    background: var(--black);
+}
+
+.team-member-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.team-member-section--reverse .team-member-inner {
+    direction: rtl;
+}
+
+.team-member-section--reverse .team-member-inner > * {
+    direction: ltr;
+}
+
+.team-member-media {
+    position: relative;
+}
+
+.team-member-image-wrap {
+    aspect-ratio: 4/5;
+    max-height: 560px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 169, 97, 0.15);
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.team-member-section:hover .team-member-image-wrap {
+    border-color: rgba(201, 169, 97, 0.35);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.team-member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.team-member-section:hover .team-member-image {
+    transform: scale(1.03);
+}
+
+.team-member-content {
+    padding: 1rem 0;
+}
+
+.team-member-number {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.team-member-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.team-member-role {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.team-member-bio {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.team-member-more-wrap {
+    margin-top: 1.5rem;
+}
+
+.team-member-more-btn {
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s;
+}
+
+.team-member-more-btn:hover {
+    color: var(--light-gold);
+}
+
+.team-member-more {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.team-member-more p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--gray);
+}
+
+/* Responsive equipo */
+@media (max-width: 768px) {
+    .team-hero {
+        min-height: 90vh;
+    }
+
+    .team-hero .scroll-indicator {
+        bottom: 2rem;
+    }
+
+    .team-intro-section {
+        padding: 5rem 2rem 4rem;
+    }
+
+    .team-member-section {
+        padding: 4rem 2rem;
+    }
+
+    .team-member-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        direction: ltr;
+    }
+
+    .team-member-section--reverse .team-member-inner {
+        direction: ltr;
+    }
+
+    .team-member-media {
+        order: -1;
+    }
+
+    .team-member-image-wrap {
+        max-height: 420px;
+    }
+
+    .team-member-name {
+        font-size: 1.75rem;
+    }
+}
+
+/* ==========================================================================
+   Página de reserva (agendar cita)
+   ========================================================================== */
+
+.page-booking .loader {
+    display: none;
+}
+
+.booking-main {
+    padding-bottom: 5rem;
+}
+
+.booking-hero {
+    padding: 10rem 4rem 4rem;
+}
+
+.booking-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+.booking-progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.booking-progress-step.is-active,
+.booking-progress-step.is-past {
+    opacity: 1;
+}
+
+.booking-progress-number {
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.booking-progress-step.is-active .booking-progress-number {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201, 169, 97, 0.1);
+}
+
+.booking-progress-step.is-past .booking-progress-number {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.booking-progress-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gray);
+}
+
+.booking-progress-step.is-active .booking-progress-label {
+    color: var(--light-gold);
+}
+
+.booking-progress-line {
+    width: 2rem;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+}
+
+.booking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.booking-step {
+    display: none;
+    animation: bookingFadeIn 0.35s ease;
+}
+
+.booking-step.is-visible {
+    display: block;
+}
+
+@keyframes bookingFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.booking-step-desc {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.booking-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.booking-service-card {
+    display: block;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: all 0.3s ease;
+}
+
+.booking-service-card:hover {
+    border-color: rgba(201, 169, 97, 0.35);
+}
+
+.booking-service-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.booking-service-input:checked + .booking-service-name {
+    color: var(--light-gold);
+}
+
+.booking-service-card:has(.booking-service-input:checked) {
+    border-color: var(--gold);
+    background: rgba(201, 169, 97, 0.08);
+}
+
+.booking-service-name {
+    font-size: 0.9rem;
+    color: var(--white);
+    transition: color 0.3s;
+}
+
+.booking-date-wrap {
+    margin-bottom: 2.5rem;
+}
+
+.booking-field {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.booking-field-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.booking-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.9rem 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.booking-input::placeholder {
+    color: var(--gray);
+    opacity: 0.8;
+}
+
+.booking-input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.booking-input[type="date"] {
+    cursor: pointer;
+}
+
+.booking-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.booking-time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.booking-time-slot {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.booking-time-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.booking-time-slot span {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.85rem;
+    color: var(--gray);
+    transition: all 0.25s;
+}
+
+.booking-time-slot:hover span {
+    border-color: rgba(201, 169, 97, 0.4);
+    color: var(--white);
+}
+
+.booking-time-slot .booking-time-input:checked + span {
+    border-color: var(--gold);
+    background: rgba(201, 169, 97, 0.15);
+    color: var(--light-gold);
+}
+
+.booking-summary {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.booking-summary-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+}
+
+.booking-summary-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin: 0.25rem 0;
+}
+
+.booking-fields {
+    margin-bottom: 2rem;
+}
+
+.booking-step-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.booking-step-actions .cta-button-secondary {
+    margin-right: 0;
+}
+
+.booking-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    max-width: 560px;
+    margin: 3rem auto 0;
+    padding: 0 2rem;
+}
+
+/* Responsive reserva */
+@media (max-width: 768px) {
+    .booking-hero {
+        padding: 9rem 2rem 3rem;
+    }
+
+    .booking-progress {
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+    }
+
+    .booking-progress-label {
+        display: none;
+    }
+
+    .booking-progress-line {
+        width: 1rem;
+    }
+
+    .booking-container {
+        padding: 0 2rem;
+    }
+
+    .booking-services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .booking-service-name {
+        font-size: 0.8rem;
+    }
+
+    .booking-input {
+        max-width: none;
+    }
+
+    .booking-time-slot span {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================================================
+   Menú hamburguesa
+   ========================================================================== */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--white);
+    transition: all 0.35s ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Botón flotante WhatsApp
+   ========================================================================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.55);
+}
+
+/* ==========================================================================
+   Animaciones escalonadas – cards de servicios
+   ========================================================================== */
+
+.services-grid .service-item:nth-child(1)  { transition-delay: 0.00s; }
+.services-grid .service-item:nth-child(2)  { transition-delay: 0.08s; }
+.services-grid .service-item:nth-child(3)  { transition-delay: 0.16s; }
+.services-grid .service-item:nth-child(4)  { transition-delay: 0.08s; }
+.services-grid .service-item:nth-child(5)  { transition-delay: 0.16s; }
+.services-grid .service-item:nth-child(6)  { transition-delay: 0.24s; }
+.services-grid .service-item:nth-child(7)  { transition-delay: 0.08s; }
+.services-grid .service-item:nth-child(8)  { transition-delay: 0.16s; }
+.services-grid .service-item:nth-child(9)  { transition-delay: 0.24s; }
+.services-grid .service-item:nth-child(10) { transition-delay: 0.08s; }
+.services-grid .service-item:nth-child(11) { transition-delay: 0.16s; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    header nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    header .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 10, 10, 0.98);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    header.nav-open .nav-links {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    header .nav-links a {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.25rem;
+        letter-spacing: 3px;
+        font-weight: 300;
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+    }
+
+    section {
+        padding: 4rem 2rem;
+    }
+
+    .intro {
+        padding: 5rem 2rem 6rem;
+    }
+
+    .intro-pills {
+        gap: 0.5rem 1rem;
+    }
+
+    .pill {
+        padding: 0.4rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .gallery {
+        padding: 4rem 2rem 0;
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-section-header {
+        margin-bottom: 2rem;
+    }
+
+    .info-blocks {
+        padding: 4rem 2rem;
+    }
+
+    .info-blocks-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-map {
+        min-height: 400px;
+    }
+
+    .experience-list {
+        gap: 2rem;
+    }
+
+    .cta-title,
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .page-hero {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .service-detail-nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .service-spheres {
+        gap: 1.25rem 1.5rem;
+    }
+
+    .service-sphere-circle {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .service-sphere-icon {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .service-sphere-label {
+        font-size: 0.65rem;
+    }
+
+    .service-detail-content {
+        padding: 3rem 2rem;
+    }
+
+    .service-detail-section {
+        padding: 3rem 0;
+        scroll-margin-top: 6rem;
+    }
+
+    .service-detail-title {
+        font-size: 1.6rem;
+    }
+
+    .page-cta {
+        padding: 3rem 2rem;
+    }
+}
