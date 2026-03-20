@@ -18,13 +18,21 @@
         <nav id="navbar" role="navigation" aria-label="Menú principal">
             <a href="index.html" class="brand">Lumina</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="equipo.html">Equipo</a></li>
-                <li><a href="index.html#espacios">Espacios</a></li>
-                <li><a href="index.html#experiencia">Experiencia</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+                <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
+                <li><a href="index.html#espacios" data-i18n="nav.spaces">Espacios</a></li>
+                <li><a href="index.html#experiencia" data-i18n="nav.experience">Experiencia</a></li>
+                <li><a href="index.html#contacto" data-i18n="nav.contact">Contacto</a></li>
             </ul>
+            <div class="lang-dropdown" id="langDropdown">
+                <button class="lang-current" aria-expanded="false" aria-haspopup="true">ES</button>
+                <ul class="lang-options">
+                    <li><button class="lang-option active" data-lang="es" aria-selected="true">ES</button></li>
+                    <li><button class="lang-option" data-lang="en" aria-selected="false">EN</button></li>
+                    <li><button class="lang-option" data-lang="pt" aria-selected="false">PT</button></li>
+                </ul>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -38,12 +46,12 @@
         <section class="team-hero" id="equipo-inicio" aria-label="Conoce al equipo">
             <div class="team-hero-bg" aria-hidden="true"></div>
             <div class="team-hero-content">
-                <span class="team-hero-subtitle reveal">Las personas detrás de Lumina</span>
-                <h1 class="team-hero-title reveal">Conoce al equipo</h1>
-                <p class="team-hero-text reveal">Terapeutas certificados y apasionados por el bienestar integral. Cada uno aporta años de formación, una perspectiva única y la vocación de acompañarte en tu camino de sanación.</p>
+                <span class="team-hero-subtitle reveal" data-i18n="team.hero.subtitle">Las personas detrás de Lumina</span>
+                <h1 class="team-hero-title reveal" data-i18n="team.hero.title">Conoce al equipo</h1>
+                <p class="team-hero-text reveal" data-i18n="team.hero.text">Terapeutas certificados y apasionados por el bienestar integral. Cada uno aporta años de formación, una perspectiva única y la vocación de acompañarte en tu camino de sanación.</p>
             </div>
             <div class="scroll-indicator" role="button" tabindex="0" aria-label="Ir a la siguiente sección" data-scroll-to="#equipo-intro">
-                <span>Descubrir</span>
+                <span data-i18n="team.discover">Descubrir</span>
                 <div class="scroll-line" aria-hidden="true"></div>
             </div>
         </section>
@@ -51,10 +59,10 @@
         <!-- Intro -->
         <section class="team-intro-section" id="equipo-intro">
             <div class="section-header reveal">
-                <span class="section-subtitle">Nuestro equipo</span>
-                <h2 class="section-title">Quienes te acompañan</h2>
+                <span class="section-subtitle" data-i18n="team.intro.subtitle">Nuestro equipo</span>
+                <h2 class="section-title" data-i18n="team.intro.title">Quienes te acompañan</h2>
             </div>
-            <p class="team-intro-text reveal">Cada terapeuta de Lumina ha sido seleccionado por su formación, experiencia y compromiso con la excelencia. Aquí puedes conocerlos y elegir con quién deseas comenzar tu proceso de transformación.</p>
+            <p class="team-intro-text reveal" data-i18n="team.intro.text">Cada terapeuta de Lumina ha sido seleccionado por su formación, experiencia y compromiso con la excelencia. Aquí puedes conocerlos y elegir con quién deseas comenzar tu proceso de transformación.</p>
         </section>
 
         <!-- Terapeuta 1 -->
@@ -67,15 +75,15 @@
                 </div>
                 <div class="team-member-content reveal">
                     <span class="team-member-number" aria-hidden="true">01</span>
-                    <h2 class="team-member-name">Dra. Elena Vargas Ruiz</h2>
-                    <p class="team-member-role">Directora & Terapeuta Energética</p>
-                    <p class="team-member-bio">Doctora en Ciencias Integrativas con más de 18 años acompañando procesos de transformación profunda. Formada en México, India y España, Elena combina el rigor académico con la sensibilidad espiritual para ofrecer sesiones únicas, personalizadas y profundamente reveladoras.</p>
-                    <p class="team-member-bio">Su especialidad abarca Reiki, Alineación de Chakras y Flores de Bach, disciplinas en las que ha formado a más de 200 terapeutas en Latinoamérica.</p>
+                    <h2 class="team-member-name" data-i18n="team.1.name">Dra. Elena Vargas Ruiz</h2>
+                    <p class="team-member-role" data-i18n="team.1.role">Directora & Terapeuta Energética</p>
+                    <p class="team-member-bio" data-i18n="team.1.bio1">Doctora en Ciencias Integrativas con más de 18 años acompañando procesos de transformación profunda. Formada en México, India y España, Elena combina el rigor académico con la sensibilidad espiritual para ofrecer sesiones únicas, personalizadas y profundamente reveladoras.</p>
+                    <p class="team-member-bio" data-i18n="team.1.bio2">Su especialidad abarca Reiki, Alineación de Chakras y Flores de Bach, disciplinas en las que ha formado a más de 200 terapeutas en Latinoamérica.</p>
                     <div class="team-member-more-wrap">
-                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="1">Leer más</button>
+                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="1" data-i18n="team.readmore">Leer más</button>
                         <div class="team-member-more" id="team-more-1" hidden>
-                            <p>Certificada por la Asociación Internacional de Terapeutas Energéticos (AITE) y por el Instituto Usui de Reiki en Japón. Ha facilitado más de 4,500 sesiones a lo largo de su carrera y es conferencista habitual en congresos de medicina integrativa en México y Latinoamérica.</p>
-                            <p>Fundó Lumina en 2012 con la convicción de que el bienestar holístico debe ser accesible, riguroso y profundamente humano. "El cuerpo sana cuando el alma se reconoce a sí misma."</p>
+                            <p data-i18n="team.1.more1">Certificada por la Asociación Internacional de Terapeutas Energéticos (AITE) y por el Instituto Usui de Reiki en Japón. Ha facilitado más de 4,500 sesiones a lo largo de su carrera y es conferencista habitual en congresos de medicina integrativa en México y Latinoamérica.</p>
+                            <p data-i18n="team.1.more2">Fundó Lumina en 2012 con la convicción de que el bienestar holístico debe ser accesible, riguroso y profundamente humano. "El cuerpo sana cuando el alma se reconoce a sí misma."</p>
                         </div>
                     </div>
                 </div>
@@ -92,15 +100,15 @@
                 </div>
                 <div class="team-member-content reveal">
                     <span class="team-member-number" aria-hidden="true">02</span>
-                    <h2 class="team-member-name">Mtro. Adrián Solís Peña</h2>
-                    <p class="team-member-role">Terapeuta Corporal & Especialista en Shiatsu</p>
-                    <p class="team-member-bio">Maestro en Terapias Orientales con formación en Tokio y Ciudad de México. Adrián lleva 14 años dedicados al estudio del cuerpo como mapa emocional, integrando técnicas orientales con enfoques contemporáneos para liberar bloqueos físicos y energéticos.</p>
-                    <p class="team-member-bio">Sus sesiones de Shiatsu, Terapia Corporal y Biomagnetismo están reconocidas entre las más efectivas y precisas de la Condesa.</p>
+                    <h2 class="team-member-name" data-i18n="team.2.name">Mtro. Adrián Solís Peña</h2>
+                    <p class="team-member-role" data-i18n="team.2.role">Terapeuta Corporal & Especialista en Shiatsu</p>
+                    <p class="team-member-bio" data-i18n="team.2.bio1">Maestro en Terapias Orientales con formación en Tokio y Ciudad de México. Adrián lleva 14 años dedicados al estudio del cuerpo como mapa emocional, integrando técnicas orientales con enfoques contemporáneos para liberar bloqueos físicos y energéticos.</p>
+                    <p class="team-member-bio" data-i18n="team.2.bio2">Sus sesiones de Shiatsu, Terapia Corporal y Biomagnetismo están reconocidas entre las más efectivas y precisas de la Condesa.</p>
                     <div class="team-member-more-wrap">
-                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="2">Leer más</button>
+                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="2" data-i18n="team.readmore">Leer más</button>
                         <div class="team-member-more" id="team-more-2" hidden>
-                            <p>Certificado por el Instituto Nippon de Shiatsu en Tokio y por la Escuela Mexicana de Biomagnetismo. Colabora regularmente con médicos y psicólogos en protocolos de salud integral para pacientes con estrés crónico y dolor musculoesquelético.</p>
-                            <p>Sus sesiones combinan presión, movimiento consciente y trabajo energético en un ambiente de confianza absoluta. "El cuerpo nunca miente; sólo necesita que lo escuchemos con atención."</p>
+                            <p data-i18n="team.2.more1">Certificado por el Instituto Nippon de Shiatsu en Tokio y por la Escuela Mexicana de Biomagnetismo. Colabora regularmente con médicos y psicólogos en protocolos de salud integral para pacientes con estrés crónico y dolor musculoesquelético.</p>
+                            <p data-i18n="team.2.more2">Sus sesiones combinan presión, movimiento consciente y trabajo energético en un ambiente de confianza absoluta. "El cuerpo nunca miente; sólo necesita que lo escuchemos con atención."</p>
                         </div>
                     </div>
                 </div>
@@ -117,15 +125,15 @@
                 </div>
                 <div class="team-member-content reveal">
                     <span class="team-member-number" aria-hidden="true">03</span>
-                    <h2 class="team-member-name">Lic. Valeria Montoya Cruz</h2>
-                    <p class="team-member-role">Especialista en Cristaloterapia & Reflexología</p>
-                    <p class="team-member-bio">Licenciada en Psicología con posgrado en Terapias Alternativas. Valeria fusiona la psicología humanista con la cristaloterapia y la reflexología para ofrecer un acompañamiento integral que trabaja cuerpo, mente y emociones al mismo tiempo.</p>
-                    <p class="team-member-bio">Su enfoque único integra la dimensión emocional en cada sesión de Terapia con Piedras, Reflexología y Baño de Lodo.</p>
+                    <h2 class="team-member-name" data-i18n="team.3.name">Lic. Valeria Montoya Cruz</h2>
+                    <p class="team-member-role" data-i18n="team.3.role">Especialista en Cristaloterapia & Reflexología</p>
+                    <p class="team-member-bio" data-i18n="team.3.bio1">Licenciada en Psicología con posgrado en Terapias Alternativas. Valeria fusiona la psicología humanista con la cristaloterapia y la reflexología para ofrecer un acompañamiento integral que trabaja cuerpo, mente y emociones al mismo tiempo.</p>
+                    <p class="team-member-bio" data-i18n="team.3.bio2">Su enfoque único integra la dimensión emocional en cada sesión de Terapia con Piedras, Reflexología y Baño de Lodo.</p>
                     <div class="team-member-more-wrap">
-                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="3">Leer más</button>
+                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="3" data-i18n="team.readmore">Leer más</button>
                         <div class="team-member-more" id="team-more-3" hidden>
-                            <p>Formada en el Instituto de Cristaloterapia de Barcelona y certificada en Reflexología Podal por la Federación Internacional de Reflexología. Sus sesiones de baño de lodo son reconocidas por la calidad de los minerales volcánicos utilizados y la profundidad del trabajo energético.</p>
-                            <p>Ha colaborado con centros de bienestar en México, Colombia y España. "Sanar es recordar quién eres antes del ruido del mundo."</p>
+                            <p data-i18n="team.3.more1">Formada en el Instituto de Cristaloterapia de Barcelona y certificada en Reflexología Podal por la Federación Internacional de Reflexología. Sus sesiones de baño de lodo son reconocidas por la calidad de los minerales volcánicos utilizados y la profundidad del trabajo energético.</p>
+                            <p data-i18n="team.3.more2">Ha colaborado con centros de bienestar en México, Colombia y España. "Sanar es recordar quién eres antes del ruido del mundo."</p>
                         </div>
                     </div>
                 </div>
@@ -142,15 +150,15 @@
                 </div>
                 <div class="team-member-content reveal">
                     <span class="team-member-number" aria-hidden="true">04</span>
-                    <h2 class="team-member-name">Lic. Camila Reyes Mora</h2>
-                    <p class="team-member-role">Terapeuta Facial & Experta en Oxigenoterapia</p>
-                    <p class="team-member-bio">Licenciada en Cosmetología Médica con especialidad en tratamientos naturales y terapias respiratorias. Con 10 años de experiencia, Camila transforma no solo el aspecto de la piel, sino el estado emocional de sus clientes mediante tratamientos con productos 100% orgánicos.</p>
-                    <p class="team-member-bio">Especialista en Facial Relajante, Terapia de Oxígeno y Flores de Bach, integra lo visible y lo invisible en cada sesión.</p>
+                    <h2 class="team-member-name" data-i18n="team.4.name">Lic. Camila Reyes Mora</h2>
+                    <p class="team-member-role" data-i18n="team.4.role">Terapeuta Facial & Experta en Oxigenoterapia</p>
+                    <p class="team-member-bio" data-i18n="team.4.bio1">Licenciada en Cosmetología Médica con especialidad en tratamientos naturales y terapias respiratorias. Con 10 años de experiencia, Camila transforma no solo el aspecto de la piel, sino el estado emocional de sus clientes mediante tratamientos con productos 100% orgánicos.</p>
+                    <p class="team-member-bio" data-i18n="team.4.bio2">Especialista en Facial Relajante, Terapia de Oxígeno y Flores de Bach, integra lo visible y lo invisible en cada sesión.</p>
                     <div class="team-member-more-wrap">
-                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="4">Leer más</button>
+                        <button type="button" class="team-member-more-btn" aria-expanded="false" data-more="4" data-i18n="team.readmore">Leer más</button>
                         <div class="team-member-more" id="team-more-4" hidden>
-                            <p>Certificada en Oxigenoterapia por la Academia Americana de Medicina Estética y formada en Flores de Bach por la Fundación Dr. Edward Bach en Inglaterra. Ha atendido a más de 1,200 clientes con protocolos personalizados que combinan técnica estética y equilibrio emocional.</p>
-                            <p>"La piel es el espejo más fiel del mundo interior. Cuando sanamos por dentro, la luz se refleja hacia afuera."</p>
+                            <p data-i18n="team.4.more1">Certificada en Oxigenoterapia por la Academia Americana de Medicina Estética y formada en Flores de Bach por la Fundación Dr. Edward Bach en Inglaterra. Ha atendido a más de 1,200 clientes con protocolos personalizados que combinan técnica estética y equilibrio emocional.</p>
+                            <p data-i18n="team.4.more2">"La piel es el espejo más fiel del mundo interior. Cuando sanamos por dentro, la luz se refleja hacia afuera."</p>
                         </div>
                     </div>
                 </div>
@@ -159,8 +167,8 @@
 
         <!-- CTA -->
         <section class="page-cta">
-            <p class="page-cta-text reveal">¿Lista para comenzar tu transformación?</p>
-            <a href="https://wa.me/525567894321" class="cta-button" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+            <p class="page-cta-text reveal" data-i18n="team.cta.text">¿Lista para comenzar tu transformación?</p>
+            <a href="https://www.whatsapp.com" class="cta-button" target="_blank" rel="noopener noreferrer" data-i18n="cta.whatsapp">Escribir por WhatsApp</a>
         </section>
     </main>
 
@@ -168,21 +176,39 @@
         <div class="footer-content">
             <div class="footer-brand">Lumina</div>
             <nav class="footer-social" aria-label="Redes sociales">
-                <a href="https://www.instagram.com/lumina.centro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-                <a href="https://www.facebook.com/luminacentro" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-                <a href="https://wa.me/525567894321" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
             </nav>
         </div>
         <div class="footer-legal">
             <span class="footer-copy">Lumina © 2026</span>
-            <a href="#" class="footer-privacy">Aviso de privacidad</a>
+            <a href="#" class="footer-privacy" data-i18n="footer.privacy">Aviso de privacidad</a>
         </div>
     </footer>
 
-    <a href="https://wa.me/525567894321" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <a href="https://www.whatsapp.com" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
+    <!-- Menú móvil: hijo directo de body, sin stacking context -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Menú de navegación">
+        <ul class="mobile-menu-links">
+            <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+            <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+            <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
+            <li><a href="index.html#espacios" data-i18n="nav.spaces">Espacios</a></li>
+            <li><a href="index.html#experiencia" data-i18n="nav.experience">Experiencia</a></li>
+            <li><a href="index.html#contacto" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+        <div class="lang-switcher" role="group" aria-label="Idioma">
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="pt">PT</button>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/equipo.js"></script>
 </body>

@@ -110,30 +110,72 @@
 
     /**
      * Menú hamburguesa para móvil
+     * El overlay (#mobileMenu) es hijo directo de <body>, completamente fuera
+     * del stacking context de mix-blend-mode del nav.
      */
     function initMobileMenu() {
-        const toggle = document.getElementById('navToggle');
-        const header = document.querySelector('header');
-        const navLinks = document.getElementById('navLinks');
+        var toggle = document.getElementById('navToggle');
+        var header = document.querySelector('header');
+        var menu = document.getElementById('mobileMenu');
         if (!toggle || !header) return;
 
+        function closeMenu() {
+            header.classList.remove('nav-open');
+            toggle.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            if (menu) {
+                menu.classList.remove('is-open');
+                menu.setAttribute('aria-hidden', 'true');
+            }
+        }
+
         toggle.addEventListener('click', function () {
-            const isOpen = header.classList.toggle('nav-open');
+            var isOpen = header.classList.toggle('nav-open');
             toggle.classList.toggle('is-open', isOpen);
             toggle.setAttribute('aria-expanded', String(isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (menu) {
+                menu.classList.toggle('is-open', isOpen);
+                menu.setAttribute('aria-hidden', String(!isOpen));
+            }
         });
 
-        if (navLinks) {
-            navLinks.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    header.classList.remove('nav-open');
-                    toggle.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                });
+        if (menu) {
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', closeMenu);
             });
         }
+    }
+
+    /**
+     * Dropdown selector de idioma en el nav
+     */
+    function initLangDropdown() {
+        var dropdown = document.getElementById('langDropdown');
+        if (!dropdown) return;
+
+        var currentBtn = dropdown.querySelector('.lang-current');
+
+        currentBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = dropdown.classList.toggle('open');
+            currentBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        dropdown.querySelectorAll('.lang-option').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var lang = this.getAttribute('data-lang');
+                if (window.luminaI18n) window.luminaI18n.setLang(lang);
+                dropdown.classList.remove('open');
+                currentBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', function () {
+            dropdown.classList.remove('open');
+            currentBtn.setAttribute('aria-expanded', 'false');
+        });
     }
 
     /**
@@ -185,6 +227,7 @@
         initHeroParallax();
         initScrollIndicator();
         initMobileMenu();
+        initLangDropdown();
         initCounterAnimation();
     }
 
