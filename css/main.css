@@ -884,6 +884,33 @@ section {
 }
 
 /* ==========================================================================
+   Space section image (espacios.html)
+   ========================================================================== */
+.space-section-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 2.5rem;
+}
+
+/* Gallery items as links */
+a.gallery-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Contact intro text (contacto.html) */
+.contact-intro-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 

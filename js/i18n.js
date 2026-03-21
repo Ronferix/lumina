@@ -149,7 +149,41 @@
             'team.4.bio2': 'Especialista en Facial Relajante, Terapia de Oxígeno y Flores de Bach, integra lo visible y lo invisible en cada sesión.',
             'team.4.more1': 'Certificada en Oxigenoterapia por la Academia Americana de Medicina Estética y formada en Flores de Bach por la Fundación Dr. Edward Bach en Inglaterra. Ha atendido a más de 1,200 clientes con protocolos personalizados que combinan técnica estética y equilibrio emocional.',
             'team.4.more2': '"La piel es el espejo más fiel del mundo interior. Cuando sanamos por dentro, la luz se refleja hacia afuera."',
-            'team.cta.text': '¿Lista para comenzar tu transformación?'
+            'team.cta.text': '¿Lista para comenzar tu transformación?',
+            /* ── Página espacios ── */
+            'page.spaces.title': 'Nuestros Espacios',
+            'page.spaces.subtitle': 'Áreas para el bienestar',
+            'spaces.nav.label': 'Espacios',
+            'space.zen.sphere': 'Sala Zen',
+            'space.garden.sphere': 'Jardín',
+            'space.suite.sphere': 'Suite',
+            'space.crystal.sphere': 'Cristales',
+            'space.zen.title': 'Sala Zen',
+            'space.zen.text': 'Nuestro espacio de meditación y relajación profunda. Un santuario de silencio y luz natural donde la mente encuentra quietud. Colchonetas de meditación, cuencos tibetanos y aromaterapia crean el ambiente perfecto para soltar el estrés y volver a ti mismo.',
+            'space.zen.quote': '"En el silencio encontramos las respuestas que el ruido no nos deja escuchar" — Lumina Centro Holístico',
+            'space.garden.title': 'Jardín de los Sentidos',
+            'space.garden.text': 'Un espacio al aire libre rodeado de plantas aromáticas, agua en movimiento y texturas naturales. Diseñado para despertar los cinco sentidos y conectarte con la naturaleza en el corazón de la ciudad. Un oasis de serenidad donde la mente se libera y el cuerpo respira.',
+            'space.garden.quote': '"La naturaleza siempre porta la medicina que necesitamos" — Lumina Centro Holístico',
+            'space.suite.title': 'Suite de Terapias',
+            'space.suite.text': 'Nuestra sala de tratamientos privada, equipada con camilla terapéutica de primera calidad y todos los materiales necesarios para cada sesión. Temperatura, iluminación y música binaural cuidadosamente calibradas para tu bienestar. El espacio donde ocurre la transformación.',
+            'space.suite.quote': '"Cada sesión es un viaje único. El espacio lo sostiene todo" — Lumina Centro Holístico',
+            'space.crystal.title': 'Cámara de Cristales',
+            'space.crystal.text': 'Una sala única donde la energía de cuarzos, amatistas y otros cristales crea un campo vibracional de sanación. Utilizada en sesiones de cristaloterapia, meditación profunda y trabajo energético avanzado. Un espacio que potencia la capacidad natural de autocuración del cuerpo y la mente.',
+            'space.crystal.quote': '"Los cristales son la memoria de la Tierra, portadores de millones de años de transformación" — Lumina Centro Holístico',
+            'spaces.cta.text': '¿Quieres vivir la experiencia?',
+            /* ── Página experiencia ── */
+            'page.exp.title': 'La Experiencia',
+            'page.exp.subtitle': 'Donde la sabiduría ancestral y el bienestar moderno convergen',
+            'page.exp.philosophy.title': 'Cada detalle, elegido para ti',
+            'page.exp.philosophy.text1': 'En Lumina creemos que el bienestar verdadero se vive en los detalles: la calidad del silencio, la temperatura del aire, el aroma que te recibe al entrar. Cada elemento de nuestro espacio ha sido seleccionado con intención para crear una experiencia que va más allá de la terapia.',
+            'page.exp.philosophy.text2': 'Nuestro enfoque integra tradiciones milenarias de todo el mundo con el rigor científico moderno. No seguimos tendencias; honramos lo que funciona, lo que sana, lo que transforma.',
+            'page.exp.quote': '"El cuerpo sana cuando el alma se reconoce a sí misma" — Dra. Elena Vargas, fundadora',
+            'exp.cta.text': '¿Lista para transformarte?',
+            /* ── Página contacto ── */
+            'page.contact.title': 'Contáctanos',
+            'page.contact.subtitle': 'Estamos aquí para acompañarte',
+            'contact.intro.text': 'Escríbenos, llámanos o visítanos. Con gusto te ayudamos a diseñar tu experiencia de bienestar personalizada.',
+            'contact.cta.text': 'La manera más rápida de reservar es por WhatsApp. Respondemos a la brevedad.'
         },
 
         en: {
@@ -296,7 +330,41 @@
             'team.4.bio2': 'Specialist in Relaxing Facial, Oxygen Therapy and Bach Flowers, she integrates the visible and the invisible in every session.',
             'team.4.more1': 'Certified in Oxygen Therapy by the American Academy of Aesthetic Medicine and trained in Bach Flowers by the Dr. Edward Bach Foundation in England. She has served over 1,200 clients with personalized protocols that combine aesthetic technique and emotional balance.',
             'team.4.more2': '"The skin is the most faithful mirror of the inner world. When we heal within, the light is reflected outward."',
-            'team.cta.text': 'Ready to begin your transformation?'
+            'team.cta.text': 'Ready to begin your transformation?',
+            /* ── Spaces page ── */
+            'page.spaces.title': 'Our Spaces',
+            'page.spaces.subtitle': 'Areas for wellbeing',
+            'spaces.nav.label': 'Spaces',
+            'space.zen.sphere': 'Zen Room',
+            'space.garden.sphere': 'Garden',
+            'space.suite.sphere': 'Suite',
+            'space.crystal.sphere': 'Crystals',
+            'space.zen.title': 'Zen Room',
+            'space.zen.text': 'Our space for meditation and deep relaxation. A sanctuary of silence and natural light where the mind finds stillness. Meditation mats, Tibetan bowls and aromatherapy create the perfect atmosphere to release stress and return to yourself.',
+            'space.zen.quote': '"In silence we find the answers that noise does not let us hear" — Lumina Holistic Center',
+            'space.garden.title': 'Garden of the Senses',
+            'space.garden.text': 'An open-air space surrounded by aromatic plants, flowing water and natural textures. Designed to awaken the five senses and reconnect you with nature in the heart of the city. An oasis of serenity where the mind is freed and the body breathes.',
+            'space.garden.quote': '"Nature always carries the medicine we need" — Lumina Holistic Center',
+            'space.suite.title': 'Therapy Suite',
+            'space.suite.text': 'Our private treatment room, equipped with a top-quality therapy table and all the materials needed for each session. Temperature, lighting and binaural music carefully calibrated for your wellbeing. The space where transformation happens.',
+            'space.suite.quote': '"Each session is a unique journey. The space holds everything" — Lumina Holistic Center',
+            'space.crystal.title': 'Crystal Chamber',
+            'space.crystal.text': 'A unique room where the energy of quartz, amethyst and other crystals creates a vibrational healing field. Used in crystal therapy sessions, deep meditation and advanced energy work. A space that amplifies the natural self-healing capacity of body and mind.',
+            'space.crystal.quote': '"Crystals are the memory of the Earth, carrying millions of years of transformation" — Lumina Holistic Center',
+            'spaces.cta.text': 'Want to live the experience?',
+            /* ── Experience page ── */
+            'page.exp.title': 'The Experience',
+            'page.exp.subtitle': 'Where ancestral wisdom and modern wellbeing converge',
+            'page.exp.philosophy.title': 'Every detail, chosen for you',
+            'page.exp.philosophy.text1': 'At Lumina we believe that true wellbeing lives in the details: the quality of silence, the temperature of the air, the aroma that greets you at the door. Every element of our space has been selected with intention to create an experience that goes beyond therapy.',
+            'page.exp.philosophy.text2': 'Our approach integrates ancient traditions from around the world with modern scientific rigor. We do not follow trends; we honor what works, what heals, what transforms.',
+            'page.exp.quote': '"The body heals when the soul recognizes itself" — Dr. Elena Vargas, founder',
+            'exp.cta.text': 'Ready to transform?',
+            /* ── Contact page ── */
+            'page.contact.title': 'Contact Us',
+            'page.contact.subtitle': 'We are here to accompany you',
+            'contact.intro.text': 'Write to us, call us or visit us. We will gladly help you design your personalized wellness experience.',
+            'contact.cta.text': 'The fastest way to book is via WhatsApp. We will respond promptly.'
         },
 
         pt: {
@@ -443,7 +511,41 @@
             'team.4.bio2': 'Especialista em Facial Relaxante, Terapia de Oxigênio e Flores de Bach, integra o visível e o invisível em cada sessão.',
             'team.4.more1': 'Certificada em Oxigenoterapia pela Academia Americana de Medicina Estética e formada em Flores de Bach pela Fundação Dr. Edward Bach na Inglaterra. Atendeu mais de 1.200 clientes com protocolos personalizados que combinam técnica estética e equilíbrio emocional.',
             'team.4.more2': '"A pele é o espelho mais fiel do mundo interior. Quando curamos por dentro, a luz se reflete para fora."',
-            'team.cta.text': 'Pronta para começar sua transformação?'
+            'team.cta.text': 'Pronta para começar sua transformação?',
+            /* ── Página espaços ── */
+            'page.spaces.title': 'Nossos Espaços',
+            'page.spaces.subtitle': 'Áreas para o bem-estar',
+            'spaces.nav.label': 'Espaços',
+            'space.zen.sphere': 'Sala Zen',
+            'space.garden.sphere': 'Jardim',
+            'space.suite.sphere': 'Suíte',
+            'space.crystal.sphere': 'Cristais',
+            'space.zen.title': 'Sala Zen',
+            'space.zen.text': 'Nosso espaço de meditação e relaxamento profundo. Um santuário de silêncio e luz natural onde a mente encontra quietude. Colchonetes de meditação, tigelas tibetanas e aromaterapia criam o ambiente perfeito para soltar o estresse e voltar a si mesmo.',
+            'space.zen.quote': '"No silêncio encontramos as respostas que o ruído não nos deixa ouvir" — Lumina Centro Holístico',
+            'space.garden.title': 'Jardim dos Sentidos',
+            'space.garden.text': 'Um espaço ao ar livre rodeado de plantas aromáticas, água em movimento e texturas naturais. Projetado para despertar os cinco sentidos e conectá-lo com a natureza no coração da cidade. Um oásis de serenidade onde a mente se liberta e o corpo respira.',
+            'space.garden.quote': '"A natureza sempre traz a medicina que precisamos" — Lumina Centro Holístico',
+            'space.suite.title': 'Suíte de Terapias',
+            'space.suite.text': 'Nossa sala de tratamentos privada, equipada com maca terapêutica de primeira qualidade e todos os materiais necessários para cada sessão. Temperatura, iluminação e música binaural cuidadosamente calibradas para o seu bem-estar. O espaço onde acontece a transformação.',
+            'space.suite.quote': '"Cada sessão é uma jornada única. O espaço sustenta tudo" — Lumina Centro Holístico',
+            'space.crystal.title': 'Câmara de Cristais',
+            'space.crystal.text': 'Uma sala única onde a energia de quartzo, ametista e outros cristais cria um campo vibracional de cura. Utilizada em sessões de cristaloterapia, meditação profunda e trabalho energético avançado. Um espaço que potencializa a capacidade natural de autocura do corpo e da mente.',
+            'space.crystal.quote': '"Os cristais são a memória da Terra, portadores de milhões de anos de transformação" — Lumina Centro Holístico',
+            'spaces.cta.text': 'Quer viver a experiência?',
+            /* ── Página experiência ── */
+            'page.exp.title': 'A Experiência',
+            'page.exp.subtitle': 'Onde a sabedoria ancestral e o bem-estar moderno convergem',
+            'page.exp.philosophy.title': 'Cada detalhe, escolhido para você',
+            'page.exp.philosophy.text1': 'Na Lumina acreditamos que o verdadeiro bem-estar se vive nos detalhes: a qualidade do silêncio, a temperatura do ar, o aroma que te recebe ao entrar. Cada elemento do nosso espaço foi selecionado com intenção para criar uma experiência que vai além da terapia.',
+            'page.exp.philosophy.text2': 'Nossa abordagem integra tradições milenares de todo o mundo com o rigor científico moderno. Não seguimos tendências; honramos o que funciona, o que cura, o que transforma.',
+            'page.exp.quote': '"O corpo se cura quando a alma se reconhece" — Dra. Elena Vargas, fundadora',
+            'exp.cta.text': 'Pronta para se transformar?',
+            /* ── Página contato ── */
+            'page.contact.title': 'Contate-nos',
+            'page.contact.subtitle': 'Estamos aqui para acompanhá-lo',
+            'contact.intro.text': 'Escreva-nos, ligue ou visite-nos. Com prazer ajudamos a projetar sua experiência de bem-estar personalizada.',
+            'contact.cta.text': 'A maneira mais rápida de reservar é pelo WhatsApp. Respondemos em breve.'
         }
     };
 
